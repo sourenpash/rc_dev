@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot name="full_assembly">
+
+
+  <!-- WORLD LINK AND JOINT --> 
+  <link name="world"></link>
+    <!-- A simple fixed joint from our empty world link, to our base. -->
+    <!-- The base origin is offset from the world origin. -->
+    
+    
+  <joint name="base_joint" type="fixed">
+        <origin xyz="1.5 1.0 0" rpy="0 0 0"/>
+        <parent link="world"/>
+        <child link="base_link"/>        
+  </joint>
+  
+  
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find full_assembly)/meshes/FabConvert.com_base_link.stl" scale="4 4 4"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.1 0.752941176470588 1" />
+      </material>
+    </visual>
+  </link>
+</robot>
